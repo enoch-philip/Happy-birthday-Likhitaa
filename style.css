@@ -1,0 +1,202 @@
+
+/* =========================
+   Premium Birthday Theme
+   ========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  color:#333;
+  min-height:100vh;
+  overflow-x:hidden;
+  background:linear-gradient(-45deg,#ffd6e7,#fff6fb,#e8e3ff,#ffe7cb);
+  background-size:400% 400%;
+  animation:bgMove 16s ease infinite;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.background{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  z-index:-2;
+}
+
+.circle{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(40px);
+  opacity:.35;
+  animation:float 18s ease-in-out infinite alternate;
+}
+
+.c1{width:250px;height:250px;background:#ff73a9;left:-50px;top:5%;}
+.c2{width:320px;height:320px;background:#8c7dff;right:-60px;top:15%;}
+.c3{width:200px;height:200px;background:#ffd36d;left:25%;bottom:10%;}
+.c4{width:180px;height:180px;background:#79e5ff;right:30%;bottom:5%;}
+.c5{width:260px;height:260px;background:#ff9cc9;left:45%;top:40%;}
+
+@keyframes float{
+  from{transform:translateY(0) translateX(0);}
+  to{transform:translateY(-35px) translateX(20px);}
+}
+
+.page{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:30px;
+}
+
+.glass{
+  width:min(1100px,95%);
+  background:rgba(255,255,255,.28);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:28px;
+  box-shadow:0 20px 40px rgba(0,0,0,.18);
+  padding:40px;
+  text-align:center;
+}
+
+h1{
+  font-family:'Great Vibes',cursive;
+  font-size:5rem;
+  color:#ff3c8d;
+  margin-bottom:10px;
+}
+
+h2,h3,p{
+  margin:10px 0;
+}
+
+#gift{
+  font-size:9rem;
+  cursor:pointer;
+  animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-15px) scale(1.05)}
+}
+
+.cake{
+  font-size:7rem;
+  animation:bounce 2.2s infinite;
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:25px;
+}
+
+button{
+  border:none;
+  padding:14px 28px;
+  border-radius:999px;
+  background:#ff4d94;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:0 10px 24px rgba(255,77,148,.4);
+}
+
+.memoryLayout{
+  display:grid;
+  grid-template-columns:1fr 320px 1fr;
+  gap:22px;
+  align-items:center;
+  margin:30px 0;
+}
+
+.videoColumn{
+  display:grid;
+  gap:14px;
+}
+
+.videoColumn video{
+  width:100%;
+  border-radius:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+.photoBox img{
+  width:100%;
+  aspect-ratio:9/16;
+  object-fit:cover;
+  border-radius:22px;
+  border:5px solid white;
+  box-shadow:0 0 30px rgba(255,255,255,.8);
+  transition:.4s;
+}
+
+.photoBox img:hover{
+  transform:scale(1.03);
+}
+
+#envelope{
+  font-size:6rem;
+  cursor:pointer;
+}
+
+#paper{
+  display:none;
+  max-width:750px;
+  margin:20px auto 0;
+  background:#fffdf7;
+  border-radius:18px;
+  padding:35px;
+  box-shadow:0 12px 25px rgba(0,0,0,.2);
+  transform-origin:top;
+}
+
+.letterTitle{
+  font-family:'Great Vibes',cursive;
+  font-size:3.5rem;
+  color:#ff3c8d;
+}
+
+#letterText{
+  line-height:1.9;
+  white-space:pre-wrap;
+}
+
+@media(max-width:900px){
+  .memoryLayout{
+    grid-template-columns:1fr;
+  }
+  .photoBox{
+    order:-1;
+    max-width:320px;
+    margin:auto;
+  }
+  h1{
+    font-size:3.5rem;
+  }
+}
